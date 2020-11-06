@@ -14,11 +14,13 @@ link_directories(${PROJECT_SOURCE_DIR}/dll)
 
 
 ####################################################################################################
-
-file(GLOB SOURCE "src/classes/*.cpp")
+# not suppose by cmake
+file(GLOB_RECURSE SOURCE ${PROJECT_SOURCE_DIR}/src/classes/*.cpp)
+# use this func to alternate(not work in recurse mode)
+#aux_source_directory(${PROJECT_SOURCE_DIR}/src/classes/*.cpp SOURCE)
 
 add_executable(
-        breakOut main.cpp
+        breakOut src/main.cpp
         src/glad.c
         src/stb_image.cpp
         ${SOURCE}
