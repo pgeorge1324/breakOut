@@ -7,6 +7,8 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <vector>
+#include <game/GameLevel.h>
 
 // 代表了游戏的当前状态
 enum GameState {
@@ -15,6 +17,11 @@ enum GameState {
     GAME_WIN
 };
 
+// Initial size of the player paddle
+const glm::vec2 PLAYER_SIZE(100, 20);
+// Initial velocity of the player paddle
+const GLfloat PLAYER_VELOCITY(500.0f);
+
 class Game
 {
 public:
@@ -22,6 +29,10 @@ public:
     GameState  State;
     GLboolean  Keys[1024];
     GLuint     Width, Height;
+
+    std::vector<GameLevel> Levels;
+    GLuint Level;
+
     // 构造函数/析构函数
     Game(GLuint width, GLuint height);
     virtual ~Game();
