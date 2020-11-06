@@ -22,3 +22,7 @@ void Game::Update(GLfloat dt) {
 void Game::Render() {
 
 }
+
+Game::~Game() {
+
+}

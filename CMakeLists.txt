@@ -13,10 +13,22 @@ link_directories(${PROJECT_SOURCE_DIR}/dll)
 ####################################################################################################
 
 
+####################################################################################################
 
-#####################################################################
-add_executable(breakOut main.cpp include/game/Game.h src/glad.c src/stb_image.cpp src/classes/Game.cpp include/game/Shader.h src/classes/Shader.cpp include/game/Texture2D.h src/classes/Texture2D.cpp include/game/ResourceManager.h src/classes/ResourceManager.cpp)
+file(GLOB SOURCE "src/classes/*.cpp")
+
+add_executable(
+        breakOut main.cpp
+        src/glad.c
+        src/stb_image.cpp
+        ${SOURCE}
+)
+####################################################################################################
+
+
+
+####################################################################################################
 target_link_libraries(breakOut ${PROJECT_SOURCE_DIR}/lib/glfw3.lib)
 target_link_libraries(breakOut ${PROJECT_SOURCE_DIR}/lib/assimp-vc140-mt.lib)
 #target_link_libraries(breakOut ${PROJECT_SOURCE_DIR}/dll/mingw/glfw3.dll)
-#####################################################################
+####################################################################################################
