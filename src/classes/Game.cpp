@@ -106,7 +106,6 @@ void Game::Update(GLfloat dt) {
     {
 //        this->ResetLevel();
 //        this->ResetPlayer();
-        std::cout << "游戏结束" << std::endl;
     }
 }
 
